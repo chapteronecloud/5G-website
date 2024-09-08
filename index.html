@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>视频播放</title>
-
-        <!-- Google Analytics -->
+    <title>Video Page</title>
+    <style>
+        /* 让视频全屏显示 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black; /* 设置背景为黑色 */
+        }
+        video {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover; /* 确保视频覆盖全屏幕 */
+        }
+    </style>
+            <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1G4S15RGZ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -13,12 +30,12 @@
       gtag('js', new Date());
       gtag('config', 'YOUR_TRACKING_ID');
     </script>
-    
+
 </head>
 <body>
-    <video src="video.mp4" controls autoplay muted>
-    Sorry, your browser does not support embedded videos.
-</video>
-
+    <video autoplay muted playsinline>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 </body>
 </html>
